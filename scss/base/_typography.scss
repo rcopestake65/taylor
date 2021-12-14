@@ -1,0 +1,121 @@
+@use "variables" as *;
+
+/*-----------------GLOBAL,TYPOGRAPHY & UTILITY STYLES---------------*/
+body {
+    font-weight: $light;
+    font-family: "Roboto", Helvetica, Arial, Lucida, sans-serif;
+    overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto", Helvetica, Arial, Lucida, sans-serif;
+    font-weight: normal;
+}
+.redink-page-header h2 {
+    font-weight: $semi-bold !important;
+}
+a {
+    color: $link-blue;
+}
+a:hover {
+    color: $red;
+}
+em.asterisk {
+    font-size: 14px;
+}
+
+/*utility spacing*/
+.ml1 {
+    margin-left: 1em;
+}
+.ml2-large {
+    margin-left: 2em;
+}
+@media (max-width: 500px) {
+    .ml2-large {
+        margin-left: 0;
+        margin-top: 2em;
+    }
+}
+
+.medium-header h2 {
+    font-size: clamp(1em, 1.5vw, 40px) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0 3rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.redink-two-col-text h4 {
+    font-weight: $regular;
+}
+.redink-footer-margin {
+    margin-right: 30px !important;
+}
+/*intro for pages other than homepage*/
+.redink-pages-intro h3 {
+    font-size: 1em;
+    line-height: 1.5;
+}
+/*displaying empty cols to show backround images on smaller screens*/
+.redink-image-text-block .et_pb_column.et_pb_column_empty {
+    display: block !important;
+}
+/*sub pages intro block*/
+.redink-subpages-intro h2 {
+    font-size: 2.5em !important;
+    font-weight: $regular !important;
+}
+.redink-subpages-intro .redink-callout-paragraph p {
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 24px;
+}
+.redink-callout-paragraph {
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 24px !important;
+    font-weight: 400 !important;
+}
+
+.redink-subpages-intro .redink-callout-paragraph {
+    font-weight: 400 !important;
+}
+.redink-subpages-intro .redink-main-copy h3 {
+    padding: 1em 0;
+    line-height: 1.5;
+    font-weight: 500;
+}
+.redink-subpages-intro .redink-main-copy h3:first-of-type {
+    padding-top: 6px;
+}
+.redink-subpages-intro .redink-main-copy p + h3 {
+    padding: 1em 0 !important;
+}
+.redink-subpages-intro .redink-main-copy p {
+    padding-bottom: 0;
+    line-height: 1.5em;
+}
+.redink-subpages-intro .redink-main-copy p + p {
+    padding-top: 1em;
+}
+.redink-main-copy p,
+.redink-main-copy h3 {
+    font-size: 16px !important;
+}
+.redink-main-copy h3 {
+    font-weight: $semi-bold;
+}
+
+/*------------GLOBAL ITEMS---------------*/
+/*Brighterir iframe*/
+iframe {
+    width: 100%;
+    border: none;
+    overflow: hidden;
+}

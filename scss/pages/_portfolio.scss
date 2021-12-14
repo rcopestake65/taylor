@@ -1,0 +1,53 @@
+@use "../base/variables" as *;
+
+/*------------PORTFOLIO--------------*/
+.redink-centre-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Fleet cards*/
+.redink-fleet table {
+    font-size: 0.8em;
+    border: none !important;
+    width: 100%;
+    padding: 0;
+    margin: 0 !important;
+    text-transform: capitalize;
+}
+.redink-fleet table th {
+    text-transform: uppercase;
+    color: $darkblue;
+    font-size: 0.8em;
+}
+.redink-fleet table tr:nth-of-type(1) th {
+    background-color: $darkblue;
+    color: white;
+}
+.redink-fleet table tr:nth-of-type(2),
+.redink-fleet table tr:nth-of-type(4) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.redink-fleet table td {
+    border-top: none;
+    padding: 6px 24px;
+}
+
+/*Fleet table for Desktops and Laptops*/
+.redink-large-screen-fleet table {
+    font-size: 14px;
+}
+.redink-large-screen-fleet table th {
+    background: $darkblue;
+    color: white;
+}
+.redink-large-screen-fleet table tr:nth-child(odd) {
+    background: #b5b3b21f;
+}
+.redink-large-screen-fleet table td:first-of-type {
+    text-transform: uppercase;
+}
+.redink-large-screen-fleet table th,
+.redink-large-screen-fleet table td {
+    width: 15%;
+}

@@ -1,0 +1,276 @@
+@use "../base/variables" as *;
+
+/*--------HEADER and NAV and Modal-------------*/
+/*remove caret from menu iyems with dropdown*/
+.et-menu .menu-item-has-children > a:first-child::after {
+    content: none;
+}
+
+/*space around menu items*/
+.et_pb_menu .et-menu > li {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+/*remove padding from main menu first item*/
+.et-menu .menu-item-has-children > a:first-child {
+    padding-right: 0;
+}
+#menu-main-navigation li a {
+    font-weight: $semi-bold !important;
+}
+#menu-main-navigation li a:hover,
+#menu-main-navigation li.current_page_ancestor > a,
+#menu-main-navigation [aria-current] {
+    color: $red !important;
+}
+#menu-main-navigation [aria-current] {
+    color: $red !important;
+    font-weight: $bold !important;
+}
+
+/*edit the Divi submenu*/
+.et_pb_menu_0_tb_header.et_pb_menu .nav li ul.sub-menu {
+    background-color: $darkblue !important;
+}
+.et_pb_menu_0_tb_header.et_pb_menu .nav li ul.sub-menu:hover {
+    background-color: $darkblue !important;
+}
+.nav li ul.sub-menu li {
+    padding: 0 5px;
+    margin: 0;
+}
+.nav li ul.sub-menu li a:hover {
+    background-color: $dropdownblue !important;
+}
+.nav li ul.sub-menu {
+    width: 300px;
+}
+/*dropdown caret*/
+.et_pb_menu_0_tb_header.et_pb_menu .nav li ul.sub-menu::before {
+    content: "";
+    border: 10px solid #fff0;
+    border-bottom: none;
+    border-color: $darkblue #fff0 transparent #fff0;
+    position: absolute;
+    left: 37%;
+    top: -12px;
+}
+/*slight position adjustments for different menu items*/
+.et_pb_menu_0_tb_header.et_pb_menu .nav li:nth-of-type(3) ul.sub-menu::before,
+.et_pb_menu_0_tb_header.et_pb_menu .nav li:nth-of-type(4) ul.sub-menu::before,
+.et_pb_menu_0_tb_header.et_pb_menu .nav li:nth-of-type(5) ul.sub-menu::before {
+    left: 27%;
+}
+.et_pb_menu_0_tb_header.et_pb_menu .nav li:nth-of-type(3) ul.sub-menu::before {
+    left: 50%;
+}
+.et_pb_menu_0_tb_header.et_pb_menu .nav li:nth-of-type(5) ul.sub-menu::before {
+    left: 45%;
+}
+.et_pb_menu .et_pb_menu__menu > nav > ul > li > ul {
+    top: calc(100% + 7px);
+    left: -50%;
+}
+.sub-menu li,
+.sub-menu li a {
+    width: 100% !important;
+}
+.nav .sub-menu li {
+    line-height: 1em;
+}
+/*mobile menu*/
+.et_mobile_menu li a {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    color: #666;
+    padding: 5px;
+    display: block;
+}
+.et_mobile_menu li li {
+    padding-left: 0;
+}
+.et_mobile_menu li .sub-menu li a {
+    font-size: 0.7em !important;
+}
+.et_mobile_menu li a:hover,
+.nav ul li a:hover {
+    background-color: $darkblue !important;
+    opacity: 0.7;
+}
+.et_mobile_menu li#menu-item-1223 > a {
+    font-weight: 700;
+}
+/*end of sub menu styles*/
+.redink-header img {
+    max-width: clamp(250px, 20vw, 300px);
+}
+.redink-header a {
+    font-size: 13px !important;
+}
+.redink-header .et_mobile_nav_menu a {
+    font-size: clamp(12px, 1vw, 22px);
+}
+/*desktop rollover*/
+.redink-menu .et-menu a:hover {
+    opacity: 1;
+}
+/*adjust Divi Menu module breakpoint*/
+@media only screen and (max-width: 1216px) {
+    .et_pb_menu .et_pb_menu__menu {
+        display: none;
+    }
+    .et_pb_menu_inner_container {
+        padding: 10px;
+    }
+
+    .et_mobile_nav_menu {
+        display: block;
+    }
+}
+.et_pb_menu_0_tb_header .mobile_nav .mobile_menu_bar::before {
+    color: #fff !important;
+}
+.et_pb_module .mobile_menu_bar:before {
+    top: 0;
+}
+/*mobile menu*/
+ul.et_mobile_menu {
+    list-style-type: none;
+    text-align: left;
+}
+ul.et_mobile_menu ul.sub-menu {
+    list-style-type: none;
+}
+@media only screen and (min-width: 980px) {
+    .et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu {
+        margin-top: 10px;
+    }
+}
+.strapline {
+    width: 50%;
+    font-size: clamp(18px, 4vw, 35px) !important;
+    line-height: 1.1;
+}
+/*//////////MODAL\\\\\\\\\\\\\\\\\*/
+.button {
+    background: #428bca;
+    padding: 1em 2em;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #3876ac;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: none;
+}
+.redink-modal-container {
+    display: none;
+}
+.modal-show {
+    display: block;
+}
+.modal-content {
+    margin: 5% auto;
+    width: 60%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalopen;
+    animation-duration: $modal-duration;
+}
+@media (max-width: 1100px) {
+    .modal-content {
+        width: 90%;
+    }
+}
+.modal-header h2,
+.modal-footer h3 {
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+}
+
+.modal-header {
+    background: $darkblue;
+    padding: 15px;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal-body {
+    padding: 10px 20px;
+    background: #fff;
+}
+.modal-body p {
+    font-size: 14px;
+    line-height: 1.5em;
+}
+.modal-body {
+    padding: 10px 20px;
+    background: #fff;
+    height: 70vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.modal-body p.bold {
+    font-weight: bold;
+}
+.modal-footer {
+    background: $darkblue;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+button.submit {
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    margin-right: 2em;
+}
+button.decline {
+    background: $red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+.close {
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+    color: #fff;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

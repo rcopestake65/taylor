@@ -1,0 +1,32 @@
+@use "../base/variables" as *;
+
+/*------------INVESTORS CENTRE--------------*/
+.redink-doc-download .et_pb_text_inner div {
+    display: grid;
+    grid-template-columns: 7em 1fr 2em;
+}
+.redink-doc-download .et_pb_text_inner div p {
+    margin: 0;
+    padding: 5px 0;
+}
+/*Calendar table*/
+.redink-calendar table {
+    border: none !important;
+}
+.redink-calendar table th {
+    text-transform: uppercase;
+    color: $darkblue;
+    font-size: 0.8em;
+}
+.redink-calendar table th,
+.redink-calendar table td {
+    padding-left: 0;
+}
+.redink-calendar table td {
+    font-size: 16px;
+}
+@media (min-width: 1200px) {
+    .redink-calendar table td {
+        white-space: nowrap;
+    }
+}

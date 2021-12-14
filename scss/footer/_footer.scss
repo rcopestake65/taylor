@@ -1,0 +1,16 @@
+@use "../base/variables" as *;
+
+/*FOOTER*/
+footer * {
+    font-size: 16px !important;
+}
+.footer-menu ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.footer-menu ul li {
+    padding-bottom: 0;
+}
+.fab.fa-2x {
+    font-size: 2em !important;
+}
